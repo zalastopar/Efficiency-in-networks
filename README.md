@@ -1,1 +1,1 @@
-# Efficiency_in_networks
+# Efficiency in networks
