@@ -13,6 +13,31 @@
 
 \maketitle
 
+\section{Opis problema}
+
+Učinkovitost omrežja je merilo učinkovitosti izmenjave informacij v omrežju. Poznamo lokalno in globalno učinkovitost. Globalna učinkovitost nam pove, kako dobro si celotno omrežje
+izmenjuje informacije, ko se le-te izmenjujejo hkrati. Lokalna učinkovitost pa nam pove, kako odporno je omrežje, v primeru odpovedi nekega majhnega dela omrežja.\n
+
+Formula za \textbf{povprečno učinkovitost} grafa $G$ je definirana kot:
+$$ E(G) = \frac{1}{n(n-1)} \sum_{i\neq j \in G} \frac{1}{d(i,j)}$$,
+
+kjer je $d(i,j)$ dolžina najkrajše poti med $i$-to in $j$-to točko, $n$ pa je število vseh točk v grafu.\n
+\textbf{Globalna učinkovitost} je definirana kot:
+$$ E_{glob}(G) = \frac{E(G)}{E(K_n)} $$,
+
+kjer $K_n$, predstavlja poln graf na $n$ točkah.
+
+\textbf{Lokalna učinkovitost} je definirana kot:
+$$ E_{loc}(G) = \frac{1}{n} \sum_{i \in G} E(G_i) $$,
+
+kjer $G_i$ predstavlja podgraf grafa $G$, ki je sestavljen le iz sosedov točke $i$ (brez točke $i$).\n
+
+Izračunala bova učinkovitost omrežij preprostih grafov, kot so mreže dimenzije $1 x n$, $2 x n$, $n x n$, 3-dimenzionalne mreže, cikli, binomska drevesa, itd.
+Za preprostejše grafe bova učinkovitost izračunala točno, rezultat pa primerjala s približkom, ki ga dobimo tako, da uporabimo le razdalje med naključnimi pari točk, 
+rezultat pa posplošimo na celoten graf. Pogledala si bova tudi, kako se povprečna učinkovitost spremeni, če odstranimo katero od točk. 
+
+
+
 
 \end{document}
 
