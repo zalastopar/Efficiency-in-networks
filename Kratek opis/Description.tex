@@ -36,6 +36,19 @@ Izračunala bova učinkovitost omrežij preprostih grafov, kot so mreže dimenzi
 Za preprostejše grafe bova učinkovitost izračunala točno, rezultat pa primerjala s približkom, ki ga dobimo tako, da uporabimo le razdalje med naključnimi pari točk, 
 rezultat pa posplošimo na celoten graf. Pogledala si bova tudi, kako se povprečna učinkovitost spremeni, če odstranimo katero od točk. 
 
+\section{Programsko okolje in implementacija}
+
+Izbrala sva programski jezik \emph{Python}, saj nama je obema najbolj domač. Uporabiti nameravava knjižnici \texttt{graph-theory} in (po priporočilu asistenta) \texttt{networkx}.
+V knjižnicah so že definirani razredi, ki jih bova potrebovala za raziskovanje in prikaz grafov. 
+
+\section{Načrt za delo}
+
+Prvi korak je ustvarjanje grafov. Preprostejše grafe nameravava zgraditi vsakega posebej, nato pa nameravava napisati algoritem za strukturiranje naključnega grafa z $n$ vozlišči.
+Po potrebi bova algoritmu dodajala podrobnejša navodila (npr. naj obstaja pot med poljubnima dvema točkama). Računanje razdalje med točkama ne bo velik problem, saj knjižnice
+že vsebujejo funkcije oz. metode, namenjene prav temu. Z uporabo teh funkcij lahko napiševa funkcijo, ki bo računala povprečno učinkovitost, z uporabo te funkcije pa lahko potem
+izračunava tudi globalno in lokalno učinkovitost. Potrebovala bova tudi funkcijo, ki bo naključno izbrala nekaj vozlišč grafa in jih odstranila (skupaj z vsemi njihovimi povezavami).
+Nazadnje bova napisala še fukncijo, ki računa učinkovitost omrežja na podlagi naključnega podgrafa, rezultat pa posplošila na celotno omrežje (s tem bova raziskala smiselnost
+tovrstnega pristopa računanja učinkovitosti omrežja).
 
 
 
