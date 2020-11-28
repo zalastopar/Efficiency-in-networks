@@ -1,0 +1,66 @@
+PWD c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo
+INPUT C:/Users/Marko/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt
+INPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo/Porocilo.tex
+OUTPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo/Porocilo.log
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/article.cls
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/article.cls
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/size10.clo
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/size10.clo
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/generic/babel/babel.sty
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/generic/babel/babel.sty
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/generic/babel/switch.def
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/arabi/bblopts.cfg
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/arabi/bblopts.cfg
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/babel-slovenian/slovene.ldf
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/babel-slovenian/slovene.ldf
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/generic/babel/babel.def
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/generic/babel/txtbabel.def
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/inputenc.sty
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/inputenc.sty
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/fontenc.sty
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/fontenc.sty
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/t1enc.def
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/t1enc.def
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecrm1000.tfm
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/lmodern.sty
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/lmodern.sty
+INPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo/Porocilo.aux
+INPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo/Porocilo.aux
+OUTPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo/Porocilo.aux
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/t1lmr.fd
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/t1lmr.fd
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmr10.tfm
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmr17.tfm
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmr12.tfm
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/ot1lmr.fd
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/ot1lmr.fd
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/rm-lmr12.tfm
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/rm-lmr8.tfm
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/rm-lmr6.tfm
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omllmm.fd
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omllmm.fd
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmmi12.tfm
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmmi8.tfm
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmmi6.tfm
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omslmsy.fd
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omslmsy.fd
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmsy10.tfm
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmsy8.tfm
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmsy6.tfm
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omxlmex.fd
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omxlmex.fd
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmex10.tfm
+OUTPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo/Porocilo.pdf
+INPUT C:/Users/Marko/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmr12.tfm
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmbx12.tfm
+INPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo/Porocilo.aux
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb
+INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb
