@@ -63,6 +63,7 @@ def generate_cycle(n):
         graph.add_edge(n, 1, 1)
     return graph
 
+
 # Generating a 3D grid (m x n x p):
 
 def generate_3d_grid(m, n, p):
@@ -81,6 +82,52 @@ def generate_3d_grid(m, n, p):
                     grid.add_edge(str(i) + ',' + str(j) + ',' + str(k), str(i) + ',' + str(j) + ',' + str(k-1), 1)
                     grid.add_edge(str(i) + ',' + str(j) + ',' + str(k-1), str(i) + ',' + str(j) + ',' + str(k), 1)
     return grid
+
+
+# Generating an ideal graph with n nodes:
+
+def generate_ideal(n):
+    ideal = Graph()
+    for i in range(1, n + 1):
+        ideal.add_node(i)
+    for start in ideal.nodes():
+        for end in ideal.nodes():
+            if start != end:
+                ideal.add_edge(start, end, 1)
+                ideal.add_edge(end, start, 1)
+    return ideal
+
+
+# The following functions calculate various efficiencies of a graph
+# We used some of pre-written functions from graph-theory library
+
+
+def average_efficiency(graph):
+    total = 0
+    for start in graph.nodes():
+        partial = 0
+        for end in graph.nodes():
+            if start != end:
+                partial += 1/graph.shortest_path(start, end)[0]
+        total += partial
+    return total / (len(graph.nodes()) * (len(graph.nodes())-1))
+
+
+def global_efficiency(graph):
+    n = len(graph.nodes())
+    ideal = generate_ideal(n)
+    return average_efficiency(graph)/average_efficiency(ideal)
+
+
+def local_efficiency(graph):
+    total = 0
+    for node in graph.nodes():
+        podgraf = graph.subgraph_from_nodes(graph.network_size(node, 1))
+        podgraf.del_node(node)
+        total += average_efficiency(podgraf)
+    return total / len(graph.nodes())
+
+
 
 
 # So far so good! :)
