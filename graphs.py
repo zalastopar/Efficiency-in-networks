@@ -2,7 +2,7 @@ from graph import Graph, Graph3D
 import graph
 from graph.visuals import plot_3d, plot_2d
 import math
-from random import choice
+import random
 
 graf = Graph()
 graf.add_node("a")
@@ -22,6 +22,7 @@ def generate_1xn(n):
             grid_1xn.add_edge(i, i-1, 1)
             grid_1xn.add_edge(i-1, i, 1)
     return grid_1xn
+
 
 
 # Generating a mxn grid:
@@ -99,6 +100,23 @@ def generate_ideal(n):
     return ideal
 
 
+# Generating random graph on n nodes:
+def generate_random(n):
+    number_of_edges = randrange(n**(n-1))
+    rand = Graph()
+    for i in range(1, n):
+        rand.add_node(i)
+    while number_of_edges > 0:
+        first = random.choice(rand.nodes())
+        node = [nod for nod in rand.nodes() if nod != first]
+        second = random.choice(node)
+        rand.add_edge(first, second, 1)
+        number_of_edges -= 1
+    return random
+
+a = generate_1xn(5)
+print(random.choice(a.nodes()))    
+
 # The following functions calculate various efficiencies of a graph
 # We used some of pre-written functions from graph-theory library
 
@@ -148,8 +166,8 @@ for i in [2, 3, 4, 5, 10, 20]:
 def average_sim(graph, percent):
     pairs = set()
     while len(pairs) < min(len(graph.nodes())* (len(graph.nodes()) - 1) * percent, len(graph.nodes())* (len(graph.nodes()) - 1) * (1 - percent)):
-        first = choice(graph.nodes())
-        second = choice(graph.nodes())
+        first = random.choice(graph.nodes())
+        second = random.choice(graph.nodes())
         if first != second:
             pairs.add((first, second))
     if percent > 0.5:
@@ -163,8 +181,8 @@ def average_sim(graph, percent):
 def global_sim(graph, percent):
     pairs = set()
     while len(pairs) < min(len(graph.nodes())* (len(graph.nodes()) - 1) * percent, len(graph.nodes())* (len(graph.nodes()) - 1) * (1 - percent)):
-        first = choice(graph.nodes())
-        second = choice(graph.nodes())
+        first = random.choice(graph.nodes())
+        second = random.choice(graph.nodes())
         if first != second:
             pairs.add((first, second))
     if percent > 0.5:
