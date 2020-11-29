@@ -3,6 +3,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
 
 
 \title{%
@@ -24,11 +29,59 @@
 \newpage
 \pagenumbering{arabic}
 
+\section{Priprava okolja}
+
+Pred začetkom simulacij sva si pripravila delovno okolje. Za programerski del naloge sva uporabila \emph{Python}
+in knjižnico \emph{Graph-Theory}.\\ 
+Defirirala sva si funkcije, ki so nama ustvarile različne enostavne grafe, kot so mreže, 3-dimenzionalne mreže, 
+popolna binomska drevesa, cikle, itd.
+Prav tako sva si napisala funkcije, ki izračunajo učinkovitost omrežja. \\
+\\
+Formula za \textbf{povprečno učinkovitost} grafa $G$ je definirana kot:
+$$ E(G) = \frac{1}{n(n-1)} \sum_{i\neq j \in G} \frac{1}{d(i,j)},$$
+
+kjer je $d(i,j)$ dolžina najkrajše poti med $i$-to in $j$-to točko, $n$ pa je število vseh točk v grafu.\\
+\\
+\textbf{Globalna učinkovitost} je definirana kot:
+$$ E_{glob}(G) = \frac{E(G)}{E(K_n)}, $$
+
+kjer $K_n$, predstavlja poln graf na $n$ točkah.\\
+\\
+\textbf{Lokalna učinkovitost} je definirana kot:
+$$ E_{loc}(G) = \frac{1}{n} \sum_{i \in G} E(G_i), $$
+
+kjer $G_i$ predstavlja podgraf grafa $G$, ki je sestavljen le iz sosedov točke $i$ (brez točke $i$). \\
+\\
+Vsa koda je zbrana v datoteki \emph{graphs.py}
+
+
 \section{Učinkovitost v preprostih grafih}
 
-    \subsection{Omrežja $n \times m$}
 
-    \subsection{3-dimenzionalna omrežja}
+
+    \subsection{Mreže $m \times n$}
+    Za nekaj različnih $m$ in $n$ sva ustvarila grafe in opazovala, kakšno učinkovitost imajo.
+    Rezultati so prikazani v spodnjih tabelah.
+
+    \begin{table}[h!]
+        \begin{tabular}{c|c|c|c}
+            \multirow{2}{*}{$n$} & 
+            \multicolumn{3}{c}{$m = 1$}\\
+            & Povprečna učinkovitost & Globalna učinkovitost & Lokalna učinkovitost \\ \hline
+            2 & 1 & 1 & 0 \\
+            3 & $\frac{5}{6}$ & $\frac{5}{6}$ & 0 \\
+            4 & $\frac{13}{18}$ & $\frac{13}{18}$ & 0 \\
+            5 & $\frac{77}{120}$ & $\frac{77}{120}$ & 0 \\
+            10 & 0.4286596 & 0.4286596 & 0\\
+            20 & 0.2734463 & 0.2734463 & 0\\
+
+        \end{tabular}
+        \caption{Učinkovitost $m \times n$ omrežij, $m = 1$}
+        \label{table: 1}
+    \end{table}
+
+
+    \subsection{3-dimenzionalne mreže}
 
     \subsection{Cikli}
 
@@ -36,7 +89,7 @@
 
 \section{Učinkovitost v naključnih grafih}
 
-
+\section{Sklep}
 
 
 
