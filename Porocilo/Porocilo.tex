@@ -34,7 +34,8 @@
 Pred začetkom simulacij sva si pripravila delovno okolje. Za programerski del naloge sva uporabila \emph{Python}
 in knjižnico \emph{Graph-Theory}.\\ 
 Defirirala sva si funkcije, ki so nama ustvarile različne enostavne grafe, kot so mreže, 3-dimenzionalne mreže, 
-popolna binomska drevesa, cikle, itd.
+popolna binomska drevesa, cikle, itd. Vsi grafi so neusmerjeni. Nato pa sva si še definirala funkcijo \emph{generate\_random}, 
+ki sprejme število vozlišč $n$, na katerih funkcija naredi naključen usmerjen graf.\\
 Prav tako sva si napisala funkcije, ki izračunajo učinkovitost omrežja. \\
 \\
 Formula za \textbf{povprečno učinkovitost} grafa $G$ je definirana kot:
@@ -51,41 +52,103 @@ kjer $K_n$, predstavlja poln graf na $n$ točkah.\\
 $$ E_{loc}(G) = \frac{1}{n} \sum_{i \in G} E(G_i), $$
 
 kjer $G_i$ predstavlja podgraf grafa $G$, ki je sestavljen le iz sosedov točke $i$ (brez točke $i$). \\
-\\
+
 Vsa koda je zbrana v datoteki \emph{graphs.py}
 
+\newpage
 
 \section{Učinkovitost v preprostih grafih}
 
 
 
     \subsection{Mreže $m \times n$}
-    Za nekaj različnih $m$ in $n$ sva ustvarila grafe in opazovala, kakšno učinkovitost imajo.
+    Za nekaj različnih $m$ in $n$ sva ustvarila grafe in opazovala, kakšna je njihova 
+    povprečna učinkovitost. 
     Rezultati so prikazani v spodnjih tabelah.
 
-    \begin{table}[h!]
-        \begin{tabular}{c|c|c|c}
+    \begin{table}[!h]
+        \begin{tabular}{c|c|c|c|c|c|c|c}
             \multirow{2}{*}{$n$} & 
-            \multicolumn{3}{c}{$m = 1$}\\
-            & Povprečna učinkovitost & Globalna učinkovitost & Lokalna učinkovitost \\ \hline
-            2 & 1 & 1 & 0 \\
-            3 & $\frac{5}{6}$ & $\frac{5}{6}$ & 0 \\
-            4 & $\frac{13}{18}$ & $\frac{13}{18}$ & 0 \\
-            5 & $\frac{77}{120}$ & $\frac{77}{120}$ & 0 \\
-            10 & 0.4286596 & 0.4286596 & 0\\
-            20 & 0.2734463 & 0.2734463 & 0\\
+            \multicolumn{7}{c}{Povprečna učinkovitost}\\
+               & $m=1$       & $m=2$           & $m=3$           & $m=4$         & $m = 5$     & $m = 10$    & $m=20$     \\ \hline
+            2  & $1$         & $0.83333333$ & $0.7111111$ & $0.625$       & $0.5607404$ & $0.3842982$ & $0.2500188$\\
+            3  & $0.8333333$ & $0.7111111$  & $0.6157407$ & $0.5464646$   & $0.4938095$ & $0.3453350$ & $0.2285143$\\
+            4  & $0.7222222$ & $0.625$      & $0.5464646$ & $0.4883333$   & $0.4436090$ & $0.3150960$ & $0.2114040$\\
+            5  & $0.6416667$ & $0.5607407$  & $0.4938095$ & $0.4436090$   & $0.4046429$ & $0.2910526$ & $0.1975453$\\
+            10 & $0.4286596$ & $0.3842982$  & $0.3453350$ & $0.3150960$   & $0.2910526$ & $0.2176605$ & $0.1539108$\\
+            20 & $0.2734463$ & $0.2500188$  & $0.2285143$ & $0.2114040$   & $0.1975453$ & $0.1539108$ & $0.1133842$\\
 
         \end{tabular}
-        \caption{Učinkovitost $m \times n$ omrežij, $m = 1$}
+        \caption{Povprečna učinkovitost $m \times n$ omrežij}
         \label{table: 1}
     \end{table}
 
 
     \subsection{3-dimenzionalne mreže}
+    \begin{table}[!h]
+        \begin{tabular}{c|c|c|c|c||c|c|c|c}
+            \multirow{2}{*}{$n$} & 
+            \multicolumn{4}{c}{$r = 2$} & \multicolumn{4}{c}{$r = 3$}\\
+               & $m=2$       & $m=3$       & $m=5$       & $m=10$      & $m = 2$     & $m = 3$    & $m=5$        & $m=10$ \\ \hline
+            2  & $0.6904761$ & $0.5959596$ & $0.4782456$ & $0.3357206$ & $0.5959596$ & $0.5193800$ & $0.4223864$ & $0.3018993$\\
+            3  & $0.5959596$ & $0.5193800$ & $0.4223864$ & $0.3018993$ & $0.5193800$ & $0.4562206$ & $0.3753992$ & $0.2728478$\\
+            5  & $0.4782456$ & $0.4223864$ & $0.3498866$ & $0.2565895$ & $0.4223864$ & $0.3753992$ & $0.3141630$ & $0.2339359$ \\
+            10 & $0.3357206$ & $0.3018993$ & $0.2565895$ & $0.1954146$ & $0.3018993$ & $0.2728478$ & $0.2339359$ & $0.1805703$\\
+
+        \end{tabular}
+        \caption{Povprečna učinkovitost $m \times n \times r$ omrežij}
+        \label{table: 2}
+    \end{table}
+
+    \begin{table}[!h]
+        \begin{tabular}{c|c|c|c|c||c|c|c|c}
+            \multirow{2}{*}{$n$} & 
+            \multicolumn{4}{c}{$r = 5$} & \multicolumn{4}{c}{$r = 10$}\\
+               & $m=2$       & $m=3$       & $m=5$       & $m=10$      & $m = 2$     & $m = 3$     & $m=5$       & $m=10$ \\ \hline
+            2  & $0.4782456$ & $0.4223864$ & $0.3498866$ & $0.2565895$ & $0.3357206$ & $0.3018993$ & $0.2565895$ & $0.1954146$\\
+            3  & $0.4223864$ & $0.3753992$ & $0.3141630$ & $0.2339359$ & $0.3018993$ & $0.2728478$ & $0.2339359$ & $0.1805793$\\
+            5  & $0.3498866$ & $0.3141630$ & $0.2669560$ & $0.2032711$ & $0.2565895$ & $0.2339359$ & $0.2032711$ & $0.1600518$\\
+            10 & $0.2565895$ & $0.2339359$ & $0.2032711$ & $0.1600518$ & $0.1954146$ & $0.1805703$ & $0.1600518$ & $0.1298527$\\
+
+        \end{tabular}
+        \caption{Povprečna učinkovitost $m \times n \times r$ omrežij}
+        \label{table: 3}
+    \end{table}
 
     \subsection{Cikli}
+    \begin{table}[!h]
+        \begin{tabular}{c|c}
+            n & Povprečna učinkovitost \\ \hline
+            3   & $1$ \\
+            4   & $0.8333333$ \\
+            5   & $0.75$ \\
+            10  & $0.4851852$ \\
+            20  & $0.3030493$ \\
+            50  & $0.1549371$ \\
+            100 & $0.0906910$ \\
+
+        \end{tabular}
+        \caption{Povprečna učinkovitost ciklov z $n$ točkami}
+        \label{table: 4}
+    \end{table}
 
     \subsection{Binomska drevesa}
+    \begin{table}[!h]
+        \begin{tabular}{c|c}
+            n & Povprečna učinkovitost \\ \hline
+            2  & $0.8333333$ \\
+            3  & $0.5634921$ \\
+            4  & $0.3907937$ \\
+            5  & $0.2776549$ \\
+            6  & $0.2028584$ \\
+            7  & $0.1530067$ \\
+            8  & $0.1193636$ \\
+            9  & $0.0962377$ 
+
+        \end{tabular}
+        \caption{Povprečna učinkovitost popolnih binomskih dreves globine $n$}
+        \label{table: 5}
+    \end{table}
 
 \section{Učinkovitost v naključnih grafih}
 
