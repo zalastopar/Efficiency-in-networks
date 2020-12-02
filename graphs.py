@@ -102,20 +102,18 @@ def generate_ideal(n):
 
 # Generating random graph on n nodes:
 def generate_random(n):
-    number_of_edges = randrange(n**(n-1))
-    rand = Graph()
+    number_of_edges = random.randrange(2, n*(n-1)) 
+    rand = generate_1xn(n)
     for i in range(1, n):
         rand.add_node(i)
-    while number_of_edges > 0:
+    while len(rand.edges()) < number_of_edges:
         first = random.choice(rand.nodes())
         node = [nod for nod in rand.nodes() if nod != first]
         second = random.choice(node)
-        rand.add_edge(first, second, 1)
-        number_of_edges -= 1
-    return random
+        if rand.edge(first, second) == None:
+            rand.add_edge(first, second, 1)
+    return rand
 
-a = generate_1xn(5)
-print(random.choice(a.nodes()))    
 
 # The following functions calculate various efficiencies of a graph
 # We used some of pre-written functions from graph-theory library
@@ -150,29 +148,36 @@ def local_efficiency(graph):
         total += average_efficiency(podgraf)
     return total / len(graph.nodes())
 
+for i in [2, 3, 5, 10]:
+    for j in [2, 3, 5, 10]:
+        for k in [2, 3, 5, 10]:
+            print("Average efficiency za graf dimenzije {}x{}x{}: ".format(i, j, k) + str(average_efficiency(generate_3d_grid(i, j, k))))
 
 
 
 # So far so good! :)
-'''
-for i in [2, 3, 4, 5, 10, 20]:
-    print("Povprečna učinkovitost za " + str(i) + ": " + str(average_efficiency(generate_1xn(i)))) 
-    print("Globalna učinkovitost za " + str(i) + ": " + str(global_efficiency(generate_1xn(i)))) 
-    print("Lokalna učinkovitost za " + str(i) + ": " + str(local_efficiency(generate_1xn(i))))
-'''
+
 # The following functions calculate efficiencies by only considering a random subset of pairs rather than all possible pairs of vetrices.
 # Functions are given an argument that tells them what percentage of pairs to select
-
+# If the percent given is over 50%, then takes a different approach
 def average_sim(graph, percent):
     pairs = set()
+    all_pairs = set()
+    for first in graph.nodes():
+        for second in graph.nodes():
+            if first != second:
+                all_pairs.add((first, second))
+    lay = False
+    if percent > 0.5:
+        percent = 1 - percent
+        lay = True
     while len(pairs) < min(len(graph.nodes())* (len(graph.nodes()) - 1) * percent, len(graph.nodes())* (len(graph.nodes()) - 1) * (1 - percent)):
         first = random.choice(graph.nodes())
         second = random.choice(graph.nodes())
         if first != second:
             pairs.add((first, second))
-    if percent > 0.5:
-        # missing part where you take complement of pairs
-        pass
+    if lay:
+        pairs = all_pairs - pairs
     total = 0
     for pair in pairs:
         total += 1 / graph.shortest_path(pair[0], pair[1])
@@ -180,19 +185,26 @@ def average_sim(graph, percent):
 
 def global_sim(graph, percent):
     pairs = set()
+    all_pairs = set()
+    for first in graph.nodes():
+        for second in graph.nodes():
+            if first != second:
+                all_pairs.add((first, second))
+    lay = False
+    if percent > 0.5:
+        percent = 1 - percent
+        lay = True
     while len(pairs) < min(len(graph.nodes())* (len(graph.nodes()) - 1) * percent, len(graph.nodes())* (len(graph.nodes()) - 1) * (1 - percent)):
         first = random.choice(graph.nodes())
         second = random.choice(graph.nodes())
         if first != second:
             pairs.add((first, second))
-    if percent > 0.5:
-        # missing part where you take complement of pairs
-        pass
+    if lay:
+        pairs = all_pairs - pairs
     # Might change also:
     return average_sim(graph, percent)/average_sim(generate_ideal(len(graph.nodes())))
 
 def local_sim(graph, percent):
     pass
-
 
 
