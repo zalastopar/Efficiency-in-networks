@@ -1,1 +1,3 @@
 # Efficiency in networks
+
+Consider the concept of efficiency in networks. Compute it exactly for some simple networks, like grids of size nxn, 1xn, 2xn, etc, 3-dimensional grids, cycles, complete binary trees, etc. Compare the exact result with an estimate that is computed using the distance between a sample of pairs of vertices. (What happens if we do not sum over all pairs but over a subset of the pairs chosen at random and normalize?). Check how the average efficiency changes when a few nodes are deleted. (How does the average efficiency of the network change when random nodes of the network fail?)
