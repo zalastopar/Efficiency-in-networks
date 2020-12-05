@@ -148,11 +148,6 @@ def local_efficiency(graph):
         total += average_efficiency(podgraf)
     return total / len(graph.nodes())
 
-for i in [2, 3, 5, 10]:
-    for j in [2, 3, 5, 10]:
-        for k in [2, 3, 5, 10]:
-            print("Average efficiency za graf dimenzije {}x{}x{}: ".format(i, j, k) + str(average_efficiency(generate_3d_grid(i, j, k))))
-
 
 
 # So far so good! :)
@@ -180,7 +175,7 @@ def average_sim(graph, percent):
         pairs = all_pairs - pairs
     total = 0
     for pair in pairs:
-        total += 1 / graph.shortest_path(pair[0], pair[1])
+        total += 1 / graph.shortest_path(pair[0], pair[1])[0]
     return total / len(pairs)
 
 def global_sim(graph, percent):
@@ -206,5 +201,4 @@ def global_sim(graph, percent):
 
 def local_sim(graph, percent):
     pass
-
 
