@@ -24,7 +24,6 @@ def generate_1xn(n):
     return grid_1xn
 
 
-
 # Generating a mxn grid:
 # (We could easily generate a 1xn grid using the following code as well)
 
@@ -101,6 +100,7 @@ def generate_ideal(n):
 
 
 # Generating random graph on n nodes:
+
 def generate_random(n):
     number_of_edges = random.randrange(2, n*(n-1)) 
     rand = generate_1xn(n)
@@ -132,11 +132,7 @@ def average_efficiency(graph):
     return total / (len(graph.nodes()) * (len(graph.nodes())-1))
 
 
-def global_efficiency(graph):
-    n = len(graph.nodes())
-    ideal = generate_ideal(n)
-    if n == 1:
-        return 0
+def global_efficiency(graph, ideal):
     return average_efficiency(graph)/average_efficiency(ideal)
 
 
@@ -171,6 +167,7 @@ def average_sim(graph, percent):
         second = random.choice(graph.nodes())
         if first != second:
             pairs.add((first, second))
+    print("sem ven iz loopa")
     if lay:
         pairs = all_pairs - pairs
     total = 0
@@ -202,3 +199,59 @@ def global_sim(graph, percent):
 def local_sim(graph, percent):
     pass
 
+
+# Function to remove a percentage of edges (chosen randomly)
+def remove_random(graph, percent):
+    resitev = graph
+    lay = False
+    if percent > 0.5:
+        lay = True
+        percent = 1 - percent
+    edges = graph.edges()
+    chosen = set()
+    while len(chosen) < percent * len(edges):
+        edge = random.choice(edges)
+        if edge not in chosen:
+            chosen.add(edge)
+            chosen.add((edge[1], edge[0], edge[2]))
+    if lay:
+        zacasno = edges
+        for el in chosen:
+            zacasno.remove(el)
+        chosen = zacasno
+    for (first, second, _) in chosen:
+        try:
+            resitev.del_edge(first, second)
+            resitev.del_edge(second, first)
+        except:
+            pass
+    return resitev
+
+# Function to remove a percentage of edges (centered around a randomly selected node and its neighbor nodes)
+def remove_centered(graph, percent, start = None):
+    resitev = graph
+    total_edges = len(graph.edges())
+    if start == None:
+        start = random.choice(graph.nodes())
+    queue = [start]
+    done = []
+    while len(resitev.edges()) > (1 - percent) * total_edges and queue != []:
+        node = queue[0]
+        queue.remove(node)
+        for el in graph.nodes(from_node = node):
+            if len(resitev.edges()) <= (1 - percent) * total_edges:
+                break
+            if el not in done:
+                queue.append(el)
+            try:
+                resitev.del_edge(node, el)
+                resitev.del_edge(el, node)
+            except:
+                continue
+        done.append(node)
+    return resitev
+
+
+
+        
+        
