@@ -268,52 +268,35 @@ data = {}                   # Za sim
 for i in [2, 3, 4, 5, 10, 20, 50, 100]:                                            # Spremeni stevilke
     for j in [1, 2, 3, 4, 5, 10, 20, 50, 100]:
         for k in [1, 2, 3, 4, 5, 10, 20, 50, 100]:
+            grid = generate_3d_grid(i, j, k)
             # sim zanka
             for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:                     # Spremeni stevilke
                 grid_data = []
-                grid_global = []
-                grid_centered = []
                 for _ in range(1000):            #
-                    grid = generate_3d_grid(i, j, k)
-                    grid_1 = remove_random(generate_3d_grid(i,j,k), percent)
-                    grid_2 = remove_centered(generate_3d_grid(i, j, k), percent)
                     grid_data.append(average_sim(grid, percent))
-                    grid_global.append(global_efficiency(grid_1, grid))
-                    grid_centered.append(global_efficiency(grid_2, grid))
                 data["Grid {}x{}x{} at {}".format(i, j, k, percent)] = [percent, average_efficiency(grid), sum(grid_data[:10])/10, sum(grid_data[:100])/100, sum(grid_data)/1000]
-                data_removed["Grid {}x{}x{} at {}".format(i, j, k, percent)] = [percent, sum(grid_global)/1000, sum(grid_centered)/1000]
-
+                
 # Tree
 for i in range(2, 21): 
     tree = generate_binary(i)
     for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:                         # Spremeni stevilke
         tree_data = []
-        tree_global= []
-        tree_centered = []
         for _ in range(1000):            #
             tree_data.append(average_sim(tree, percent))
-            tree_global.append(global_efficiency(remove_random(tree, percent), tree))
-            tree_centered.append(global_efficiency(remove_centered(tree, percent), tree))
         data["Tree {} at {}".format(i, percent)] = [percent, average_efficiency(tree), sum(tree_data[:10])/10, sum(tree_data[:100])/100, sum(tree_data)/1000]
-        data_removed["Tree {} at {}".format(i, percent)] = [percent, sum(tree_global)/1000, sum(tree_centered)/1000]
 
 # Cycle
 for i in [2, 3, 4, 5, 10, 20, 50, 100, 200, 300, 400, 500, 1000, 10000, 100000, 1000000]: 
     cycle = generate_cycle(i)
     for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:                         # Spremeni stevilke
         cycle_data = []
-        cycle_global= []
-        cycle_centered = []
         for _ in range(1000):        #
             cycle_data.append(average_sim(cycle, percent))
-            cycle_global.append(global_efficiency(remove_random(cycle, percent), cycle))
-            cycle_centered.append(global_efficiency(remove_centered(cycle, percent), cycle))
         data["Cycle {} at {}".format(i, percent)] = [percent, average_efficiency(cycle), sum(cycle_data[:10])/10, sum(cycle_data[:100])/100, sum(cycle_data)/1000]
-        data_removed["Cycle {} at {}".format(i, percent)] = [percent, sum(cycle_global)/1000, sum(cycle_centered)/1000]
 
 
 df = pandas.DataFrame.from_dict(data, orient='index', columns = columns)
-
+df.to_csv('Data/Sim.csv')
 
 
 
@@ -337,6 +320,8 @@ for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:       
 df_1 = pandas.DataFrame.from_dict(data_1, orient='index', columns = cols)
 df_2 = pandas.DataFrame.from_dict(data_2, orient='index', columns = cols)
 
+df_1.to_csv('Data/remove_3d(50x50x50).csv')
+df_2.to_csv('Data/remove_3d(100x100x100).csv')
 
 data_1_bin = {}
 data_2_bin = {}
@@ -350,9 +335,11 @@ for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:       
     centered_2 = remove_centered(generate_binary(20), percent)
     data_2_bin[percent] = [global_efficiency(random_2, osnoven_2_b), global_efficiency(centered_2, osnoven_2_b)]
 
-df_1 = pandas.DataFrame.from_dict(data_1_bin, orient='index', columns = cols)
-df_2 = pandas.DataFrame.from_dict(data_2_bin, orient='index', columns = cols)
+df_1_bin = pandas.DataFrame.from_dict(data_1_bin, orient='index', columns = cols)
+df_2_bin = pandas.DataFrame.from_dict(data_2_bin, orient='index', columns = cols)
 
+df_1_bin.to_csv('Data/remove_bin(10).csv')
+df_2_bin.to_csv('Data/remove_bin(20).csv')
 
 
 
