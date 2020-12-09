@@ -5,14 +5,6 @@ import math
 import random
 import pandas
 
-graf = Graph()
-graf.add_node("a")
-graf.add_node("b")
-graf.add_edge("a", "b")
-graf.add_node("c")
-graf.add_edge("a", "c")
-
-
 # Generating a 1xn grid
     
 def generate_1xn(n):
@@ -254,53 +246,44 @@ def remove_centered(graph, percent, start = None):
     return resitev
 
 
-# Naredi csv file
-
-
-
-
 # Sim povprečje za vse (velike) grafe
 columns = ["Percent", "Avg. efficiency", "Sim 10", "Sim 100", "Sim 1000"]
 columns_removed = ["Percent", "Random", "Centered"]
 data = {}                   # Za sim
 
 # Grid
-for i in [2, 3, 4, 5, 10, 20, 50, 100]:                                            # Spremeni stevilke
+for i in [2, 3, 4, 5, 10, 20, 50, 100]:                                            
     for j in [1, 2, 3, 4, 5, 10, 20, 50, 100]:
         for k in [1, 2, 3, 4, 5, 10, 20, 50, 100]:
             grid = generate_3d_grid(i, j, k)
             # sim zanka
-            for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:                     # Spremeni stevilke
+            for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:                     
                 grid_data = []
-                for _ in range(1000):            #
+                for _ in range(1000):            
                     grid_data.append(average_sim(grid, percent))
                 data["Grid {}x{}x{} at {}".format(i, j, k, percent)] = [percent, average_efficiency(grid), sum(grid_data[:10])/10, sum(grid_data[:100])/100, sum(grid_data)/1000]
                 
 # Tree
 for i in range(2, 21): 
     tree = generate_binary(i)
-    for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:                         # Spremeni stevilke
+    for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:                         
         tree_data = []
-        for _ in range(1000):            #
+        for _ in range(1000):            
             tree_data.append(average_sim(tree, percent))
         data["Tree {} at {}".format(i, percent)] = [percent, average_efficiency(tree), sum(tree_data[:10])/10, sum(tree_data[:100])/100, sum(tree_data)/1000]
 
 # Cycle
 for i in [2, 3, 4, 5, 10, 20, 50, 100, 200, 300, 400, 500, 1000, 10000, 100000, 1000000]: 
     cycle = generate_cycle(i)
-    for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:                         # Spremeni stevilke
+    for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:                         
         cycle_data = []
-        for _ in range(1000):        #
+        for _ in range(1000):        
             cycle_data.append(average_sim(cycle, percent))
         data["Cycle {} at {}".format(i, percent)] = [percent, average_efficiency(cycle), sum(cycle_data[:10])/10, sum(cycle_data[:100])/100, sum(cycle_data)/1000]
 
 
 df = pandas.DataFrame.from_dict(data, orient='index', columns = columns)
 df.to_csv('Data/Sim.csv')
-
-
-
-
 
 
 # Nedelujoče povezave na gridih, drevesih in naključnih remove centered
@@ -310,8 +293,8 @@ data_2 = {}
 osnoven = generate_3d_grid(50, 50, 50)
 osnoven_2 = generate_3d_grid(100, 100, 100)
 for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:                 # Spremeni
-    rand = remove_random(generate_3d_grid(10, 10, 10), percent)
-    centered = remove_centered(generate_3d_grid(10, 10, 10), percent)
+    rand = remove_random(generate_3d_grid(50, 50, 50), percent)
+    centered = remove_centered(generate_3d_grid(50, 50, 50), percent)
     data_1[percent] = [global_efficiency(rand, osnoven), global_efficiency(centered, osnoven)]
     random_2 = remove_random(generate_3d_grid(100, 100, 100), percent)
     centered_2 = remove_centered(generate_3d_grid(100, 100, 100), percent)
@@ -320,14 +303,14 @@ for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:       
 df_1 = pandas.DataFrame.from_dict(data_1, orient='index', columns = cols)
 df_2 = pandas.DataFrame.from_dict(data_2, orient='index', columns = cols)
 
-df_1.to_csv('Data/remove_3d(50x50x50).csv')
-df_2.to_csv('Data/remove_3d(100x100x100).csv')
+df_1.to_csv('Data/global_3d_50.csv')
+df_2.to_csv('Data/global_3d_100.csv')
 
 data_1_bin = {}
 data_2_bin = {}
 osnoven_b = generate_binary(10)
 osnoven_2_b = generate_binary(20)
-for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:                 # Spremeni
+for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:
     rand = remove_random(generate_binary(10), percent)
     centered = remove_centered(generate_binary(10), percent)
     data_1_bin[percent] = [global_efficiency(rand, osnoven_b), global_efficiency(centered, osnoven_b)]
@@ -338,8 +321,5 @@ for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:       
 df_1_bin = pandas.DataFrame.from_dict(data_1_bin, orient='index', columns = cols)
 df_2_bin = pandas.DataFrame.from_dict(data_2_bin, orient='index', columns = cols)
 
-df_1_bin.to_csv('Data/remove_bin(10).csv')
-df_2_bin.to_csv('Data/remove_bin(20).csv')
-
-
-
+df_1_bin.to_csv('Data/global_bin_10.csv')
+df_2_bin.to_csv('Data/global_bin_10.csv')
