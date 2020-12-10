@@ -269,6 +269,7 @@ for i in [2, 3, 4, 5, 10, 20, 50, 100]:                                         
     for j in [1, 2, 3, 4, 5, 10, 20, 50, 100]:
         for k in [1, 2, 3, 4, 5, 10, 20, 50, 100]:
             grid = generate_3d_grid(i, j, k)
+            print('working on grid ' + str(i) + 'x' + str(j) + 'x' + str(k))
             # sim zanka
             for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:                     # Spremeni stevilke
                 grid_data = []
@@ -279,7 +280,8 @@ for i in [2, 3, 4, 5, 10, 20, 50, 100]:                                         
 # Tree
 for i in range(2, 21): 
     tree = generate_binary(i)
-    for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:                         # Spremeni stevilke
+    for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:    
+        print('working on tree size ' + str(i))                     # Spremeni stevilke
         tree_data = []
         for _ in range(1000):            #
             tree_data.append(average_sim(tree, percent))
@@ -288,6 +290,7 @@ for i in range(2, 21):
 # Cycle
 for i in [2, 3, 4, 5, 10, 20, 50, 100, 200, 300, 400, 500, 1000, 10000, 100000, 1000000]: 
     cycle = generate_cycle(i)
+    print('working on cycle size ' + str(i)) 
     for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:                         # Spremeni stevilke
         cycle_data = []
         for _ in range(1000):        #
@@ -309,7 +312,8 @@ data_1 = {}
 data_2 = {}
 osnoven = generate_3d_grid(50, 50, 50)
 osnoven_2 = generate_3d_grid(100, 100, 100)
-for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:                 # Spremeni
+for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:  
+    print('current grid for % ' + str(percent))               # Spremeni
     rand = remove_random(generate_3d_grid(10, 10, 10), percent)
     centered = remove_centered(generate_3d_grid(10, 10, 10), percent)
     data_1[percent] = [global_efficiency(rand, osnoven), global_efficiency(centered, osnoven)]
@@ -327,7 +331,8 @@ data_1_bin = {}
 data_2_bin = {}
 osnoven_b = generate_binary(10)
 osnoven_2_b = generate_binary(20)
-for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:                 # Spremeni
+for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:    
+    print('current tree for % ' + str(percent))             # Spremeni
     rand = remove_random(generate_binary(10), percent)
     centered = remove_centered(generate_binary(10), percent)
     data_1_bin[percent] = [global_efficiency(rand, osnoven_b), global_efficiency(centered, osnoven_b)]
