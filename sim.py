@@ -1,4 +1,5 @@
 from graphs import *
+import pandas
 from functools import reduce
 from operator import mul
 
@@ -65,5 +66,6 @@ for G in graphs:
         data[G.format(percent)] = [percent, average_efficiency(graph),
                                    sum(graph_data[:10])/10, sum(graph_data[:100])/100,
                                    sum(graph_data)/1000]
-        df = pandas.DataFrame.from_dict(data, orient='index', columns=columns)
+        df = pandas.DataFrame.from_dict(data, orient='index')
+        df.columns = columns
         df.to_csv('Data/Sim.csv')

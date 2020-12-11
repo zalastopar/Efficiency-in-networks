@@ -3,7 +3,6 @@ import graph
 from graph.visuals import plot_3d, plot_2d
 import math
 import random
-import pandas
 
 # Generating a 1xn grid
     
