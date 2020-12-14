@@ -58,13 +58,15 @@ Vsa koda je zbrana v datoteki \emph{graphs.py}
 \newpage
 
 \section{Povprečna učinkovitost v preprostih grafih}
+Ustvarila sva nekaj preprostih grafov različnih oblik in velikosti. 
+Po zgornji formuli sva izračunala povprečno učinkovitost posameznega grafa in rezultate med seboj primerjala.
+Zanimalo naju je predvsem, kaj se dogaja z učinkovitostjo, ko povečujemo število vozlišč.
+Poleg tega pa želiva primerjati učinkovitosti grafov z enakim (podobnim) številom točk in različnih oblik.
 
 
 
     \subsection{Mreže $m \times n$}
-    Za nekaj različnih $m$ in $n$ sva ustvarila grafe in opazovala, kakšna je njihova 
-    povprečna učinkovitost. 
-    Rezultati so prikazani v spodnjih tabelah.
+    
 
     \begin{table}[!h]
         \begin{tabular}{c|c|c|c|c|c|c|c}
@@ -115,6 +117,8 @@ Vsa koda je zbrana v datoteki \emph{graphs.py}
         \label{table: 3}
     \end{table}
 
+\newpage
+
     \subsection{Cikli}
     \begin{table}[!h]
         \begin{tabular}{c|c}
@@ -150,9 +154,56 @@ Vsa koda je zbrana v datoteki \emph{graphs.py}
         \label{table: 5}
     \end{table}
 
+    \subsection{Primerjava}
+    Najprej primerjamo mreže oblike $1\times n$ s cikli dolžine $n$. So namreč zelo podobne oblike, 
+    razlikujejo pa se v eni sami povezavi, ki je prisotna le v ciklu. Do razlike v učinkovitosti pride
+    ravno zaradi te povezave. Če si za primer izberemo $n = 3$ opazimo, da je v ciklu poljuben par vozlišč
+    med seboj oddaljen $1$ povezavo, medtem ko se v mreži dimenzije $3\times 1$ pojavi par, ki je oddaljen $2$ povezavi.
+    Ker se v formuli razdalja med parom vozlišč pojavlja v imenovalcu, večja razdalja pomeni manjšo učinkovitost.
+    Poleg tega se v primeru cikla zaradi dodatne povezave pot med marsikaterim parom točk skrajša. Tudi najini izračuni 
+    povejo enako zgodbo. Če si spet pogledmo kot primer $n = 3$, ima cikel povprečno učinkovitost $1$, mreža
+    pa le $0.833$. Tudi za večje grafe, npr. $n = 20$, opazimo razliko; cikel ima poveprečno učinkovitost $0.303$, 
+    mreža pa le $0.273$.\\
 
+    Podobna pričakovanja sva imela glede primerjave med mrežami oblike $1 \times n$ ter $m \times n$ (na enakem številu točk).
+    Mreže z več povezavami so zaradi podobnega premisleka kot v prejšnjem primeru bolj učinkovite. 
+    Če si primerjamo npr. mrežo $10 \times 1$ z mrežo $5 \times 2$ opazimo, da ima kljub enakemu številu točk slednja učinkovitost
+    $0.561$, kar je več kot $0.273$ (učinkovitost mreže $10 \times 1$).\\
+
+    Podobno, če za primer vzamemo mreži dimenzij $10 \times 2$ in $5 \times 4$, lahko iz tabele razberemo, da ima tabela dimenzije
+    $5 \times 4$ večjo učinkovitost, kljub enakemu številu točk. \\
+
+    Kot nadaljevanje prejšnje točke sva primerjala tudi 2-dimenzionalne mreže s 3-dimenzionalnimi. Pričakovala sva
+    podoben rezultat; da so 3-dimenzionalne bolj učinkovite od 2-dimenzionalnih. Predvidevanje se je izkazalo za resnično.
+    2-dimenzionalne mreže dimenzije $m \times n$ lahko razumemo kot 3-dimenzionalno dimenzij $1 \times m \times n$. Po podobnem 
+    premisleku kot v primerjavi mrež $1 \times n$ z $m \times n$ rezultat ni nobeno presenečenje.
+
+    Nazadnje sva primerjala še mreže z binomskimi drevesi. Zaradi povsem različne strukture obeh grafov nisva bila povsem prepričana,
+    kakšne rezultate naj pričakujeva. Vseeno pa sva se rahlo nagibala v prid mrež, saj imajo več povezav. Rezultati so najino hipotezo
+    podprli. Za primer vzamemo mrežo dimenzije $3 \times 5$ ter binomsko drevo višine $4$ (saj imata oba $15$ vozlišč). Mreža ima 
+    učinkovtost $0.494$, drevo pa le $0.390$. Podobno ima mreža dimenzij $5 \times 5 \times 5$ $125$ točk in povprečno učinkovitost $0.267$,
+    drevo višine $7$ pa $127$ točk in povprečno učinkovitost $0.153$ (torej bistveno manj).\\
+
+    Po zgornjih ugotovitvah sva vsakič prišla do sklepa, da je graf z več povezavami bolj učinkovit. Zato sva se odločila, da bova binomska drevesa
+    in mreže primerjala tako, da med seboj primerjava grafa z enakim (podobnim) številom povezav. Za začetek si poglejmo manjši primer; mreža 
+    $2 \times 3$ in binomsko drevo višine $3$. Drevo ima $6$ povezav in povprečno učinkovitost $0.563$, mreža pa ima povezavo več in učinkovitost $0.711$.
+    Če nato primerjamo mrežo dimenzij $2 \times 3 \times 5$ z binomskim drevesom višine $6$, dobimo podoben rezultat; mreža ima $59$ povezav in 
+    povprečno učinkovitost $0.422$, drevo pa $3$ povezave več in učinkovitost $0.202$. Je pa treba omeniti, da ima mreža precej manj točk kot drevo.
+    
+
+
+\section{Globalna učinkovitost}
 
 \section{Sklep}
+uvodna beseda\\
+Po pričakovanjih povprečna učinkovitost pada z večanjem števila točk.
+To se zdi smiselno, saj so v večjih omrežjih posamezni pari točk med seboj bolj oddaljeni.
+Slednje velja za grafe vseh zgoraj omenjenih oblik. 
+Ugotovila sva tudi, da so izmed preizkovanih omrežij najbolj učinkovite 3-dimenzionalne mreže, 
+najmanj pa mreže dimenzije $n \times 1$. To je zato, ker imajo 3-dimenzionalne mreže več povezav, čeprav primerjamo grafa z enakim številom vozlišč.
+S tem, ko sva primerjala binomska drevesa in mreže, sva ugotovila, da večje število povezav ne pomeni nujno večje učinkovitosti. 
+Iz najinih izračunov sklepava, da so najbolj učinkoviti tisti grafi, pri katerih je posamezno vozlišče povezano s čim več ostalimi. 
+Za primer lahko uzamemo poln graf, ki ima povprečno učinkovitost vedno enako $1$.
 
 
 

@@ -3,6 +3,8 @@
 \contentsline {section}{\numberline {2}Povpre\IeC {\v c}na u\IeC {\v c}inkovitost v preprostih grafih}{2}
 \contentsline {subsection}{\numberline {2.1}Mre\IeC {\v z}e $m \times n$}{2}
 \contentsline {subsection}{\numberline {2.2}3-dimenzionalne mre\IeC {\v z}e}{2}
-\contentsline {subsection}{\numberline {2.3}Cikli}{2}
-\contentsline {subsection}{\numberline {2.4}Binomska drevesa}{2}
-\contentsline {section}{\numberline {3}Sklep}{2}
+\contentsline {subsection}{\numberline {2.3}Cikli}{3}
+\contentsline {subsection}{\numberline {2.4}Binomska drevesa}{3}
+\contentsline {subsection}{\numberline {2.5}Primerjava}{3}
+\contentsline {section}{\numberline {3}Globalna u\IeC {\v c}inkovitost}{4}
+\contentsline {section}{\numberline {4}Sklep}{4}
