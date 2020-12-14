@@ -14,7 +14,7 @@ osnoven_b = generate_binary(10)
 osnoven_2_b = generate_binary(20)
 
 for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:
-    print('current grid for % ' + str(percent))               # Spremeni
+    print('current grid for % ' + str(percent))               
     rand = remove_random(generate_3d_grid(50, 50, 50), percent)
     centered = remove_centered(generate_3d_grid(50, 50, 50), percent)
     data_1[percent] = [global_efficiency(rand, osnoven), global_efficiency(centered, osnoven)]
@@ -29,7 +29,7 @@ for percent in [0.01, 0.02, 0.03, 0.04, 0.05, 0.1, 0.15, 0.2, 0.25, 0.5]:
     df_2.columns = cols
     df_2.to_csv('Data/global_3d_100.csv')
 
-    print('current tree for % ' + str(percent))             # Spremeni
+    print('current tree for % ' + str(percent))           
     rand = remove_random(generate_binary(10), percent)
     centered = remove_centered(generate_binary(10), percent)
     data_1_bin[percent] = [global_efficiency(rand, osnoven_b), global_efficiency(centered, osnoven_b)]
