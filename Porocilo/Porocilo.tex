@@ -81,7 +81,7 @@ Poleg tega pa želiva primerjati učinkovitosti grafov z enakim (podobnim) štev
             20 & $0.2734463$ & $0.2500188$  & $0.2285143$ & $0.2114040$   & $0.1975453$ & $0.1539108$ & $0.1133842$\\
 
         \end{tabular}
-        \caption{Povprečna učinkovitost $m \times n$ omrežij}
+        \caption{Povprečna učinkovitost $m \times n$ mrež}
         \label{table: 1}
     \end{table}
 
@@ -98,7 +98,7 @@ Poleg tega pa želiva primerjati učinkovitosti grafov z enakim (podobnim) štev
             10 & $0.3357206$ & $0.3018993$ & $0.2565895$ & $0.1954146$ & $0.3018993$ & $0.2728478$ & $0.2339359$ & $0.1805703$\\
 
         \end{tabular}
-        \caption{Povprečna učinkovitost $m \times n \times r$ omrežij}
+        \caption{Povprečna učinkovitost $m \times n \times r$ mrež}
         \label{table: 2}
     \end{table}
 
@@ -192,31 +192,43 @@ Poleg tega pa želiva primerjati učinkovitosti grafov z enakim (podobnim) štev
     
 
 
-\section{Globalna učinkovitost}
-
-
 
 \section{Povprečna učinkovitost izračunana s približkom}
+Ker je formula za računanje povprečne učinkovitosti zelo zahtevna, sva se odločila, da bova preverila, kako velika je napaka,
+če povprečno učinkovitost izračunamo s približki.
+Napisala sva funkcijo \emph{average\_sim}. Funkciji povemo odstotek, kolikšen delež parov toč naj vzame.
+Nato funkcija izračuna povprečno učinkovitost na naključni podmnožici. \\
+Za različne grafe in različno število vozlišč sva računala približke za $0.01 \%$, $0.02 \%$, $0.03 \%$, $0.04 \%$, $0.05 \%$, $0.1 \%$, $0.15 \%$, , $0.2 \%$, , $0.25 \%$ in za $0.5 \%$ parov točk.
+Za vsak graf in vsak pdstotek sva postopek ponovila $10$ krat, $100$ krat in $1000$ krat ter nato izračunala povprečje dobljenih rezultatov.
+
+
+\newpage
+
     \subsection{Mreža dimenzije $3 x 1$}
     \begin{table}[!h]
         \begin{tabular}{c|c|c|c|c}
             Procent & Povprečna učinkovitost & Približek 10 & Približek 100 & Približek 1000 \\ \hline
-            $0.01$ & $0.8333333333333334$ & $0.8$ & $0.79$ & $0.815$ \\
-            $0.02$ & $0.8333333333333334$ & $0.85$ & $0.825$ & $0.8405$ \\
-            $0.03$ & $0.8333333333333334$ & $0.75$ & $0.81$ & $0.8365$ \\
-            $0.04$ & $0.8333333333333334$ & $0.85$ & $0.86$ & $0.8405$ \\
-            $0.05$ & $0.8333333333333334$ & $0.9$ & $0.855$ & $0.828$ \\
-            $0.1$ & $0.8333333333333334$ & $0.75$ & $0.815$ & $0.8315$ \\
-            $0.15$ & $0.8333333333333334$ & $1.0$ & $0.87$ & $0.8335$ \\
-            $0.2$ & $0.8333333333333334$ & $0.85$ & $0.835$ & $0.82975$ \\
-            $0.25$ & $0.8333333333333334$ & $0.8$ & $0.845$ & $0.8315$ \\
-            $0.5$ & $0.8333333333333334$ & $0.85$ & $0.8383333333333332$ & $0.8321666666666705$ \\
+            $0.01$ & $0.8333$ & $0.8$  & $0.79$   & $0.815$ \\
+            $0.02$ & $0.8333$ & $0.85$ & $0.825$  & $0.8405$ \\
+            $0.03$ & $0.8333$ & $0.75$ & $0.81$   & $0.8365$ \\
+            $0.04$ & $0.8333$ & $0.85$ & $0.86$   & $0.8405$ \\
+            $0.05$ & $0.8333$ & $0.9$  & $0.855$  & $0.828$ \\
+            $0.1$  & $0.8333$ & $0.75$ & $0.815$  & $0.8315$ \\
+            $0.15$ & $0.8333$ & $1.0$  & $0.87$   & $0.8335$ \\
+            $0.2$  & $0.8333$ & $0.85$ & $0.835$  & $0.8298$ \\
+            $0.25$ & $0.8333$ & $0.8$  & $0.845$  & $0.8315$ \\
+            $0.5$  & $0.8333$ & $0.85$ & $0.8383$ & $0.8322$ \\
 
         \end{tabular}
         \caption{Povprečna učinkovitost in približki za mrežo dimenzije $3$ $x$ $1$}
         \label{table: 6}
     \end{table}
 
+
+\section{Globalna učinkovitost}
+
+Zanimala naju je tudi globalna učinkovitost. Odločila sva se, da jo bova izračunala samo za 3-dimenzinalne grafe in za drevesa.
+To je zato, ker so $n \times m$ mreže pravdaprav 3-dimenzionalne, s tem, da je ena dimenzija $1$, cikli pa so podobni mrežam $m \times 1 \times 1$.
 
 \section{Sklep}
 uvodna beseda\\

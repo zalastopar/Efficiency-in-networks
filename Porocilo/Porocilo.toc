@@ -6,7 +6,7 @@
 \contentsline {subsection}{\numberline {2.3}Cikli}{3}
 \contentsline {subsection}{\numberline {2.4}Binomska drevesa}{3}
 \contentsline {subsection}{\numberline {2.5}Primerjava}{3}
-\contentsline {section}{\numberline {3}Globalna u\IeC {\v c}inkovitost}{4}
-\contentsline {section}{\numberline {4}Povpre\IeC {\v c}na u\IeC {\v c}inkovitost izra\IeC {\v c}unana s pribli\IeC {\v z}kom}{4}
-\contentsline {subsection}{\numberline {4.1}Mre\IeC {\v z}a dimenzije $3 x 1$}{4}
-\contentsline {section}{\numberline {5}Sklep}{4}
+\contentsline {section}{\numberline {3}Povpre\IeC {\v c}na u\IeC {\v c}inkovitost izra\IeC {\v c}unana s pribli\IeC {\v z}kom}{4}
+\contentsline {subsection}{\numberline {3.1}Mre\IeC {\v z}a dimenzije $3 x 1$}{5}
+\contentsline {section}{\numberline {4}Globalna u\IeC {\v c}inkovitost}{5}
+\contentsline {section}{\numberline {5}Sklep}{5}
