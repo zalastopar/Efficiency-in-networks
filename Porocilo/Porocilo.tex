@@ -9,6 +9,7 @@
 \usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{graphicx}
+\usepackage{chngpage}
 \graphicspath{{figures/}}
 
 
@@ -71,6 +72,7 @@ Poleg tega pa želiva primerjati učinkovitosti grafov z enakim (podobnim) štev
     
 
     \begin{table}[!h]
+        \centering
         \begin{tabular}{c|c|c|c|c|c|c|c}
             \multirow{2}{*}{$n$} & 
             \multicolumn{7}{c}{Povprečna učinkovitost}\\
@@ -90,6 +92,8 @@ Poleg tega pa želiva primerjati učinkovitosti grafov z enakim (podobnim) štev
 
     \subsection{3-dimenzionalne mreže}
     \begin{table}[!h]
+        \begin{adjustwidth}{-0.7in}{-.5in}  
+        \begin{center}
         \begin{tabular}{c|c|c|c|c||c|c|c|c}
             \multirow{2}{*}{$n$} & 
             \multicolumn{4}{c}{$r = 2$} & \multicolumn{4}{c}{$r = 3$}\\
@@ -102,9 +106,13 @@ Poleg tega pa želiva primerjati učinkovitosti grafov z enakim (podobnim) štev
         \end{tabular}
         \caption{Povprečna učinkovitost $m \times n \times r$ mrež}
         \label{table: 2}
+        \end{center}
+        \end{adjustwidth}
     \end{table}
 
     \begin{table}[!h]
+        \begin{adjustwidth}{-.7in}{-.5in}  
+        \begin{center}
         \begin{tabular}{c|c|c|c|c||c|c|c|c}
             \multirow{2}{*}{$n$} & 
             \multicolumn{4}{c}{$r = 5$} & \multicolumn{4}{c}{$r = 10$}\\
@@ -117,12 +125,16 @@ Poleg tega pa želiva primerjati učinkovitosti grafov z enakim (podobnim) štev
         \end{tabular}
         \caption{Povprečna učinkovitost $m \times n \times r$ omrežij}
         \label{table: 3}
+        \end{center}
+        \end{adjustwidth}
     \end{table}
+
 
 \newpage
 
     \subsection{Cikli}
     \begin{table}[!h]
+        \centering
         \begin{tabular}{c|c}
             n & Povprečna učinkovitost \\ \hline
             3   & $1$ \\
@@ -140,6 +152,7 @@ Poleg tega pa želiva primerjati učinkovitosti grafov z enakim (podobnim) štev
 
     \subsection{Binomska drevesa}
     \begin{table}[!h]
+        \centering
         \begin{tabular}{c|c}
             n & Povprečna učinkovitost \\ \hline
             2  & $0.8333333$ \\
@@ -198,18 +211,20 @@ Poleg tega pa želiva primerjati učinkovitosti grafov z enakim (podobnim) štev
 \section{Povprečna učinkovitost izračunana s približkom}
 Ker je formula za računanje povprečne učinkovitosti zelo zahtevna, sva se odločila, da bova preverila, kako velika je napaka,
 če povprečno učinkovitost izračunamo s približki.
-Napisala sva funkcijo \emph{average\_sim}. Funkciji povemo odstotek, kolikšen delež parov toč naj vzame.
-Nato funkcija izračuna povprečno učinkovitost na naključni podmnožici. \\
-Za različne grafe in različno število vozlišč sva računala približke za $0.01 \%$, $0.02 \%$, $0.03 \%$, $0.04 \%$, $0.05 \%$, $0.1 \%$, $0.15 \%$, , $0.2 \%$, , $0.25 \%$ in za $0.5 \%$ parov točk.
-Za vsak graf in vsak pdstotek sva postopek ponovila $10$ krat, $100$ krat in $1000$ krat ter nato izračunala povprečje dobljenih rezultatov.
+Zato sva napisala funkcijo \emph{average\_sim}, tako da sva ustrezno spremenila formulo za povprečno učinkovitost. Funkciji podamo odstotek, kolikšen delež parov točk naj vzame. 
+Nato sešteje obratne vrednosti dolžine povezav med izbranimi pari točk, na koncu pa vsoto deli s številom parov. Računamo torej po enakem postopku, le da vzamemo samo naključno podmnožico
+parov točk.\\
+Za različne grafe in različno število vozlišč sva računala približke za $1 \%$, $2\%$, $3\%$, $4 \%$, $5 \%$, $10 \%$, $15 \%$, $20 \%$, $25 \%$ in za $50 \%$ parov točk.
+Za vsak graf in vsak odstotek sva postopek ponovila $10$ krat, $100$ krat in $1000$ krat ter nato izračunala povprečje dobljenih rezultatov.
 
 
 \newpage
 
-    \subsection{Mreža dimenzije $3 x 1$}
+    \subsection{Mreža dimenzije $3 \times 1$}
     \begin{table}[!h]
+        \centering
         \begin{tabular}{c|c|c|c|c}
-            Procent & Povprečna učinkovitost & Približek 10 & Približek 100 & Približek 1000 \\ \hline
+            Delež & Povprečna učinkovitost & Približek 10 & Približek 100 & Približek 1000 \\ \hline
             $0.01$ & $0.8333$ & $0.8$  & $0.79$   & $0.815$ \\
             $0.02$ & $0.8333$ & $0.85$ & $0.825$  & $0.8405$ \\
             $0.03$ & $0.8333$ & $0.75$ & $0.81$   & $0.8365$ \\
@@ -222,24 +237,30 @@ Za vsak graf in vsak pdstotek sva postopek ponovila $10$ krat, $100$ krat in $10
             $0.5$  & $0.8333$ & $0.85$ & $0.8383$ & $0.8322$ \\
 
         \end{tabular}
-        \caption{Povprečna učinkovitost in približki za mrežo dimenzije $3$ $x$ $1$}
+        \caption{Povprečna učinkovitost in približki za mrežo dimenzije $3 \times 1$}
         \label{table: 6}
     \end{table}
 
-    \subsection{Mreža dimenzije $4 \times 3 \times 2$}
+    Najprej sva se lotila majhnega primera in rešitve zapisala v preglednico. Opazimo, da se z večanjem števila ponovitev približek bliža točni vrednosti.
+    Poleg tega pa lahko vidimo tudi, da delež ne vpliva prav dosti na približek. To je seveda logično, saj ima opazovani graf le tri pare točk. 
+    V vsaki ponovitvi izberemo navzgor zaokroženo število parov točk. V primeru, ko izberemo delež manjši od $ \frac{1}{3}$, bomo izbrali le en par točk.
+    V najinem primeru se to zgodi vsakič, razen ko izberemo $50 \%$ parov točk.
+
+    \subsection{Mreža dimenzije $4 \times 3 \times 2$ in drevo z globino $5$}
     \begin{figure}[!h]
-        \centering
-        \includegraphics[width = 0.6\textwidth]{../Vizualizacija/Grid_4x3x2.png}
-        \label{fig: grid}
+        \makebox[\textwidth]{
+        \includegraphics[width = 0.5\textwidth]{../Vizualizacija/Grid_4x3x2.png}
+        \hfill
+        \includegraphics[width = 0.5\textwidth]{../Vizualizacija/Tree_5.png}
+        }
+        \caption{Prikaz absolutne napake za mrežo velikosti $4 \times 3 \times 2$ in drevo globine $5$}
+        \label{fig: napaka}
     \end{figure}
 
+    Iz zgornjega grafa lahko razberemo, da več kot imamo ponovitev, manjša je napaka. Mreža (levo) ima $552$ različnih parov točk, drevo (desno) pa $930$.
+    Vidimo, da za razliko od prejšnjega primera, povprečna absolutna napaka pada z večanjem deleža parov točk.
+
 \newpage    
-    \subsection{Drevo globine $5$}
-    \begin{figure}[!h]
-        \centering
-        \includegraphics[width = 0.6\textwidth]{../Vizualizacija/Tree_5.png}
-        \label{fig: tree}
-    \end{figure}
 
 
     
@@ -247,11 +268,53 @@ Za vsak graf in vsak pdstotek sva postopek ponovila $10$ krat, $100$ krat in $10
 
 \section{Globalna učinkovitost}
 
-Zanimala naju je tudi globalna učinkovitost. Odločila sva se, da jo bova izračunala samo za 3-dimenzinalne grafe in za drevesa.
-To je zato, ker so $n \times m$ mreže pravdaprav 3-dimenzionalne, s tem, da je ena dimenzija $1$, cikli pa so podobni mrežam $m \times 1 \times 1$.
+Zanimala naju je tudi globalna učinkovitost. Odločila sva se, da jo bova izračunala samo za 3-dimenzionalne mreže in za drevesa. Natančneje, izbrala sva mreži dimenzij $5 \times 5 \times 5$ in $7 \times 7 \times 7$
+ter drevesi globin $7$ in $9$.
+To je zato, ker so $n \times m$ mreže pravzaprav 3-dimenzionalne, s tem, da je ena dimenzija enaka $1$, cikli pa so podobni mrežam $m \times 1 \times 1$.\\
+V vsaki ponovitvi sva grafu odstranila določen delež povezav, za idealen graf pa sva vzela prvotni graf. Z odstranjevanjem povezav sva simulirala nedelujoče povezave. 
+Odstranjevala sva jih na dva načina. Pri prvem sva povezave odstranjevala povsem naključno, pri drugem pa tako, da so bile "nedelujoče" povezave zbrane okoli ene točke oziroma enega območja točk.
+Pri tem sva epicenter izbrala naključno. \\
+
+
+\begin{table}[!h]
+    \begin{adjustwidth}{-.7in}{-.5in}  
+    \begin{center}
+    \begin{tabular}{c|c|c||c|c||c|c||c|c}
+        \multirow{2}{*}{Delež} & 
+        \multicolumn{2}{c}{Mreža $5 \times 5 \times 5$} & \multicolumn{2}{c}{Mreža $7 \times 7 \times 7$} & \multicolumn{2}{c}{Drevo globine $7$} & \multicolumn{2}{c}{Drevo globine $9$}\\
+                & Naključno  & Območje    & Naključno  & Območje    & Naključno  & Območje    & Naključno  & Območje   \\ \hline
+        $0.01$  & $0.997986$ & $0.996002$ & $0.998649$ & $0.992360$ & $0.973268$ & $0.959905$ & $0.919040$ & $0.947637$\\
+        $0.02$  & $0.996436$ & $0.983139$ & $0.996750$ & $0.979270$ & $0.841759$ & $0.959088$ & $0.915984$ & $0.895127$\\
+        $0.03$  & $0.993971$ & $0.976350$ & $0.994922$ & $0.962184$ & $0.852714$ & $0.908842$ & $0.891352$ & $0.799904$\\
+        $0.04$  & $0.991503$ & $0.961187$ & $0.992949$ & $0.956771$ & $0.563543$ & $0.818094$ & $0.775182$ & $0.799239$\\
+        $0.05$  & $0.988266$ & $0.949432$ & $0.991327$ & $0.930986$ & $0.761260$ & $0.815371$ & $0.760988$ & $0.642016$\\
+        $0.10$  & $0.976811$ & $0.863428$ & $0.981988$ & $0.867520$ & $0.694765$ & $0.660604$ & $0.378180$ & $0.388729$\\
+        $0.15$  & $0.955474$ & $0.816746$ & $0.966606$ & $0.791326$ & $0.435229$ & $0.461789$ & $0.282195$ & $0.245252$\\
+        $0.20$  & $0.931926$ & $0.761820$ & $0.944243$ & $0.728858$ & $0.456664$ & $0.404411$ & $0.137504$ & $0.160098$\\
+        $0.25$  & $0.902518$ & $0.707743$ & $0.921387$ & $0.660562$ & $0.245534$ & $0.271947$ & $0.102830$ & $0.110347$\\
+        $0.50$  & $0.627812$ & $0.393352$ & $0.657113$ & $0.362266$ & $0.114200$ & $0.092441$ & $0.033627$ & $0.036456$
+
+    \end{tabular}
+    \caption{Globalna učinkovitost mrež in dreves}
+    \label{table: 7}
+    \end{center}
+    \end{adjustwidth}
+\end{table}
+
+
+
+Iz tabele kkkk lahko razberemo, da je učinkovitost veliko manjša, če so nedelujoče povezave skoncentrirane na določenem območju. Odstranitev povezav je veliko manj vplivala na globalno učinkovitost kot sva pričakovala.
+Še posebej pri naključno odstranjenih povezavah. Dobljen rezultat je smiselen, saj se v primeru zgoščenega nedelujočega območja dolžina poti med določenimi pari točk drastično poveča. \\
+Do podobnih ugotovitev pridemo tudi pri binomskih drevesih, z dvema pomembnima razlikama. Globalna učinkovitost je tokrat slabša, če povezave odstranimo naključno. Vzrok za to je dejstvo, da med poljubnim parom točk obstaja natanko ena pot.
+Če je katera koli povezava na poti nedelujoča, dolžina poti postane enaka $\infty$ (torej pot ne obstaja). Če pa je nedelujoče območje zgoščeno, pa dodatne nedelujoče povezave "pretrgajo" večinoma le take poti, ki so že "pretrgane". 
+Zaradi podobnega vzroka so globalne učinkovitosti izračuanne pri drevesih precej nižje kot pri mrežah. Tudi to lahko pripišemo sami strukturi obeh omrežij. Odstranitev povezav ima pri drevesih torej većji vpliv
+kot pri mrežah.
 
 \section{Sklep}
-uvodna beseda\\
+V najini nalogi sva opazovala, kako se različne učinkovitsti spreminjajo z večajnem števila vozlišč grafa ter spreminjanjem njegove oblike. Izračunala sva točno vrednosti povprečne učinkovitosti grafov ter približek,
+prav tako pa sva izračunala gobalno učinkovitost grafov, ki imajo nekaj povezav nedelujočih.\\
+
+
 Po pričakovanjih povprečna učinkovitost pada z večanjem števila točk.
 To se zdi smiselno, saj so v večjih omrežjih posamezni pari točk med seboj bolj oddaljeni.
 Slednje velja za grafe vseh zgoraj omenjenih oblik. 
@@ -259,9 +322,14 @@ Ugotovila sva tudi, da so izmed preizkovanih omrežij najbolj učinkovite 3-dime
 najmanj pa mreže dimenzije $n \times 1$. To je zato, ker imajo 3-dimenzionalne mreže več povezav, čeprav primerjamo grafa z enakim številom vozlišč.
 S tem, ko sva primerjala binomska drevesa in mreže, sva ugotovila, da večje število povezav ne pomeni nujno večje učinkovitosti. 
 Iz najinih izračunov sklepava, da so najbolj učinkoviti tisti grafi, pri katerih je posamezno vozlišče povezano s čim več ostalimi. 
-Za primer lahko uzamemo poln graf, ki ima povprečno učinkovitost vedno enako $1$.
+Za primer lahko uzamemo poln graf, ki ima povprečno učinkovitost vedno enako $1$.\\
 
+Približki za računanje povprečne učinkovitosti se nama zdijo precej natančni. Po najinem mnenju je smiselno, da bi povprečno učinkovitost računali na manjši podmnožici parov točk npr. 
+na $1\%$ vseh parov. Rezultati bi bili bolj natančni, če bi postopek ponovili večkrat in nato izračunali povprečje, vendar več ponovitev pomeni večjo zahtevnost. Je pa treba omeniti, da sva zaradi velike računske zahtevnosti
+vse poskuse izvajala na relativno preprostih grafih. Smiselno bi bilo raziskave nadaljevati tudi na večjih oz. bolj obsežnih grafih preden delava kakršne koli končne zaključke.\\
 
+Ugotovila sva, da so v primeru nedelujočih povezav mreže veliko bolj učinkovite kot pa binomska drevesa, kar je posledica tega, da med naključnim parom točk v binomskem drevesu obstaja le ena pot.
+ Seveda pa se učinkovitost manjša z večanjem števila odstranjenih povezav.
 
 
 
