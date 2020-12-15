@@ -8,5 +8,7 @@
 \contentsline {subsection}{\numberline {2.5}Primerjava}{3}
 \contentsline {section}{\numberline {3}Povpre\IeC {\v c}na u\IeC {\v c}inkovitost izra\IeC {\v c}unana s pribli\IeC {\v z}kom}{4}
 \contentsline {subsection}{\numberline {3.1}Mre\IeC {\v z}a dimenzije $3 x 1$}{5}
-\contentsline {section}{\numberline {4}Globalna u\IeC {\v c}inkovitost}{5}
-\contentsline {section}{\numberline {5}Sklep}{5}
+\contentsline {subsection}{\numberline {3.2}Mre\IeC {\v z}a dimenzije $4 \times 3 \times 2$}{5}
+\contentsline {subsection}{\numberline {3.3}Drevo globine $5$}{6}
+\contentsline {section}{\numberline {4}Globalna u\IeC {\v c}inkovitost}{6}
+\contentsline {section}{\numberline {5}Sklep}{6}
