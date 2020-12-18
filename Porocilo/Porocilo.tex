@@ -47,9 +47,9 @@ $$ E(G) = \frac{1}{n(n-1)} \sum_{i\neq j \in G} \frac{1}{d(i,j)},$$
 kjer je $d(i,j)$ dolžina najkrajše poti med $i$-to in $j$-to točko, $n$ pa je število vseh točk v grafu.\\
 \\
 \textbf{Globalna učinkovitost} je definirana kot:
-$$ E_{glob}(G) = \frac{E(G)}{E(K_n)}, $$
+$$ E_{glob}(G) = \frac{E(G)}{E(G^{ideal})}, $$
 
-kjer $K_n$, predstavlja poln graf na $n$ točkah.\\
+kjer $G^{ideal}$, predstavlja idealen graf pri katerem so vse povezave prisotne.\\
 \\
 \textbf{Lokalna učinkovitost} je definirana kot:
 $$ E_{loc}(G) = \frac{1}{n} \sum_{i \in G} E(G_i), $$
@@ -191,7 +191,7 @@ Poleg tega pa želiva primerjati učinkovitosti grafov z enakim (podobnim) štev
     Kot nadaljevanje prejšnje točke sva primerjala tudi 2-dimenzionalne mreže s 3-dimenzionalnimi. Pričakovala sva
     podoben rezultat; da so 3-dimenzionalne bolj učinkovite od 2-dimenzionalnih. Predvidevanje se je izkazalo za resnično.
     2-dimenzionalne mreže dimenzije $m \times n$ lahko razumemo kot 3-dimenzionalno dimenzij $1 \times m \times n$. Po podobnem 
-    premisleku kot v primerjavi mrež $1 \times n$ z $m \times n$ rezultat ni nobeno presenečenje.
+    premisleku kot v primerjavi mrež $1 \times n$ z $m \times n$ rezultat ni nobeno presenečenje.\\
 
     Nazadnje sva primerjala še mreže z binomskimi drevesi. Zaradi povsem različne strukture obeh grafov nisva bila povsem prepričana,
     kakšne rezultate naj pričakujeva. Vseeno pa sva se rahlo nagibala v prid mrež, saj imajo več povezav. Rezultati so najino hipotezo
@@ -307,7 +307,7 @@ Iz tabele kkkk lahko razberemo, da je učinkovitost veliko manjša, če so nedel
 Še posebej pri naključno odstranjenih povezavah. Dobljen rezultat je smiselen, saj se v primeru zgoščenega nedelujočega območja dolžina poti med določenimi pari točk drastično poveča. \\
 Do podobnih ugotovitev pridemo tudi pri binomskih drevesih, z dvema pomembnima razlikama. Globalna učinkovitost je tokrat slabša, če povezave odstranimo naključno. Vzrok za to je dejstvo, da med poljubnim parom točk obstaja natanko ena pot.
 Če je katera koli povezava na poti nedelujoča, dolžina poti postane enaka $\infty$ (torej pot ne obstaja). Če pa je nedelujoče območje zgoščeno, pa dodatne nedelujoče povezave "pretrgajo" večinoma le take poti, ki so že "pretrgane". 
-Zaradi podobnega vzroka so globalne učinkovitosti izračuanne pri drevesih precej nižje kot pri mrežah. Tudi to lahko pripišemo sami strukturi obeh omrežij. Odstranitev povezav ima pri drevesih torej većji vpliv
+Zaradi podobnega vzroka so globalne učinkovitosti izračuanne pri drevesih precej nižje kot pri mrežah. Tudi to lahko pripišemo sami strukturi obeh omrežij. Odstranitev povezav ima pri drevesih torej večji vpliv
 kot pri mrežah.
 
 \section{Sklep}
