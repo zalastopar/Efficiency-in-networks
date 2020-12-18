@@ -1,7 +1,7 @@
-PWD c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo
+PWD c:/Users/Marko/Documents/Efficiency-in-networks/Porocilo
 INPUT C:/Users/Marko/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt
-INPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo/Porocilo.tex
-OUTPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo/Porocilo.log
+INPUT c:/Users/Marko/Documents/Efficiency-in-networks/Porocilo/Porocilo.tex
+OUTPUT c:/Users/Marko/Documents/Efficiency-in-networks/Porocilo/Porocilo.log
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/article.cls
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/article.cls
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/size10.clo
@@ -54,9 +54,9 @@ INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/amsfonts/amsfon
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/amsfonts/amsfonts.sty
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/changepage/chngpage.sty
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/changepage/chngpage.sty
-INPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo/Porocilo.aux
-INPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo/Porocilo.aux
-OUTPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo/Porocilo.aux
+INPUT c:/Users/Marko/Documents/Efficiency-in-networks/Porocilo/Porocilo.aux
+INPUT c:/Users/Marko/Documents/Efficiency-in-networks/Porocilo/Porocilo.aux
+OUTPUT c:/Users/Marko/Documents/Efficiency-in-networks/Porocilo/Porocilo.aux
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/t1lmr.fd
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/t1lmr.fd
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmr10.tfm
@@ -114,12 +114,12 @@ INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/amsfonts/umsb.f
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-OUTPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo/Porocilo.pdf
+OUTPUT c:/Users/Marko/Documents/Efficiency-in-networks/Porocilo/Porocilo.pdf
 INPUT C:/Users/Marko/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmr12.tfm
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmbx12.tfm
-INPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo/Porocilo.toc
-INPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo/Porocilo.toc
+INPUT c:/Users/Marko/Documents/Efficiency-in-networks/Porocilo/Porocilo.toc
+INPUT c:/Users/Marko/Documents/Efficiency-in-networks/Porocilo/Porocilo.toc
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmbx10.tfm
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/rm-lmr10.tfm
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/rm-lmr7.tfm
@@ -136,7 +136,7 @@ INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-OUTPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo/Porocilo.toc
+OUTPUT c:/Users/Marko/Documents/Efficiency-in-networks/Porocilo/Porocilo.toc
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmri10.tfm
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT ../Vizualizacija/Grid_4x3x2.png
@@ -149,7 +149,7 @@ INPUT ../Vizualizacija/Tree_5.png
 INPUT ../Vizualizacija/Tree_5.png
 INPUT ../Vizualizacija/Tree_5.png
 INPUT ../Vizualizacija/Tree_5.png
-INPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Porocilo/Porocilo.aux
+INPUT c:/Users/Marko/Documents/Efficiency-in-networks/Porocilo/Porocilo.aux
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc

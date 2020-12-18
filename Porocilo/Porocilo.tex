@@ -272,7 +272,7 @@ Zanimala naju je tudi globalna učinkovitost. Odločila sva se, da jo bova izra�
 ter drevesi globin $7$ in $9$.
 To je zato, ker so $n \times m$ mreže pravzaprav 3-dimenzionalne, s tem, da je ena dimenzija enaka $1$, cikli pa so podobni mrežam $m \times 1 \times 1$.\\
 V vsaki ponovitvi sva grafu odstranila določen delež povezav, za idealen graf pa sva vzela prvotni graf. Z odstranjevanjem povezav sva simulirala nedelujoče povezave. 
-Odstranjevala sva jih na dva načina. Pri prvem sva povezave odstranjevala povsem naključno, pri drugem pa tako, da so bile "nedelujoče" povezave zbrane okoli ene točke oziroma enega območja točk.
+Odstranjevala sva jih na dva načina. Pri prvem sva povezave odstranjevala povsem naključno, pri drugem pa tako, da so bile nedelujoče povezave zbrane okoli ene točke oziroma enega območja točk.
 Pri tem sva epicenter izbrala naključno. \\
 
 
@@ -303,12 +303,14 @@ Pri tem sva epicenter izbrala naključno. \\
 
 
 
-Iz tabele kkkk lahko razberemo, da je učinkovitost veliko manjša, če so nedelujoče povezave skoncentrirane na določenem območju. Odstranitev povezav je veliko manj vplivala na globalno učinkovitost kot sva pričakovala.
+Iz tabele \ref{table: 7} lahko razberemo, da je učinkovitost mrež veliko manjša, če so nedelujoče povezave skoncentrirane na določenem območju. Odstranitev povezav je veliko manj vplivala na globalno učinkovitost kot sva pričakovala.
 Še posebej pri naključno odstranjenih povezavah. Dobljen rezultat je smiselen, saj se v primeru zgoščenega nedelujočega območja dolžina poti med določenimi pari točk drastično poveča. \\
-Do podobnih ugotovitev pridemo tudi pri binomskih drevesih, z dvema pomembnima razlikama. Globalna učinkovitost je tokrat slabša, če povezave odstranimo naključno. Vzrok za to je dejstvo, da med poljubnim parom točk obstaja natanko ena pot.
-Če je katera koli povezava na poti nedelujoča, dolžina poti postane enaka $\infty$ (torej pot ne obstaja). Če pa je nedelujoče območje zgoščeno, pa dodatne nedelujoče povezave "pretrgajo" večinoma le take poti, ki so že "pretrgane". 
+Pri binomskih grefih je opazna pomembna razlika; globalna učinkovitost je tokrat slabša, če povezave odstranimo naključno. Vzrok za to je dejstvo, da med poljubnim parom točk obstaja natanko ena pot.
+Če je katera koli povezava na poti nedelujoča, dolžina poti postane enaka $\infty$ (torej pot ne obstaja). Če pa je nedelujoče območje zgoščeno, pa dodatne nedelujoče povezave ``pretrgajo'' večinoma le take poti, ki so že ``pretrgane''. 
 Zaradi podobnega vzroka so globalne učinkovitosti izračuanne pri drevesih precej nižje kot pri mrežah. Tudi to lahko pripišemo sami strukturi obeh omrežij. Odstranitev povezav ima pri drevesih torej večji vpliv
 kot pri mrežah.
+
+\newpage
 
 \section{Sklep}
 V najini nalogi sva opazovala, kako se različne učinkovitsti spreminjajo z večajnem števila vozlišč grafa ter spreminjanjem njegove oblike. Izračunala sva točno vrednosti povprečne učinkovitosti grafov ter približek,

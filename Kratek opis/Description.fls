@@ -1,7 +1,7 @@
-PWD c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Kratek opis
+PWD c:/Users/Marko/Documents/Efficiency-in-networks/Kratek opis
 INPUT C:/Users/Marko/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt
-INPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Kratek opis/Description.tex
-OUTPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Kratek opis/Description.log
+INPUT c:/Users/Marko/Documents/Efficiency-in-networks/Kratek opis/Description.tex
+OUTPUT c:/Users/Marko/Documents/Efficiency-in-networks/Kratek opis/Description.log
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/article.cls
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/article.cls
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/size10.clo
@@ -24,9 +24,9 @@ INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/t1enc.def
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecrm1000.tfm
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/lmodern.sty
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/lmodern.sty
-INPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Kratek opis/Description.aux
-INPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Kratek opis/Description.aux
-OUTPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Kratek opis/Description.aux
+INPUT c:/Users/Marko/Documents/Efficiency-in-networks/Kratek opis/Description.aux
+INPUT c:/Users/Marko/Documents/Efficiency-in-networks/Kratek opis/Description.aux
+OUTPUT c:/Users/Marko/Documents/Efficiency-in-networks/Kratek opis/Description.aux
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/t1lmr.fd
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/t1lmr.fd
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmr10.tfm
@@ -66,9 +66,9 @@ INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lm
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/t1lmtt.fd
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/t1lmtt.fd
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmtt10.tfm
-OUTPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Kratek opis/Description.pdf
+OUTPUT c:/Users/Marko/Documents/Efficiency-in-networks/Kratek opis/Description.pdf
 INPUT C:/Users/Marko/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map
-INPUT c:/Users/Marko/Documents/AMAT/Efficiency-in-networks/Kratek opis/Description.aux
+INPUT c:/Users/Marko/Documents/Efficiency-in-networks/Kratek opis/Description.aux
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc
 INPUT C:/Users/Marko/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc
